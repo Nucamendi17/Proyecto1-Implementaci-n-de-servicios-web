@@ -23,11 +23,23 @@
         </div>
         <div class="form-group mx-sm-4 pb-3">
         <label for="password" color: white >Contraseña</label>
-        <input type="text" name="password">        
+        <input type="text" name="password"> 
     </div>
        <div class="form-group mx-sm-4 pb-2">
         <input type="submit" class="    btn btn-block ingresar" value="INGRESAR">
-       </div>
+        <?php 
+if(isset($_GET['error'])){
+    $error =$_GET['error'];
+    if($error=="INCORRECTO"){
+        echo "<h2>El usuario o contraseña no son correctos</h2>";
+    }
+    if($error == "VACIO"){
+        echo "<h2>Los datos enviados se encuetran vacios</h2>";
+    }
+}
+?>  
+   
+    </div>
        <div class="form-group mx-sm-4 text-right">
         <span class=""><a href="Olvide mi contraseña"></a></span>
        </div>
